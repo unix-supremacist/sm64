@@ -5,11 +5,12 @@
 
 #include "types.h"
 #include "area.h"
+#include "star_config.h"
 
 #include "course_table.h"
 
 #define EEPROM_SIZE 0x200
-#define NUM_SAVE_FILES 4
+#define NUM_SAVE_FILES 1
 
 struct SaveBlockSignature {
     u16 magic;
@@ -29,7 +30,7 @@ struct SaveFile {
     // Star flags for each course.
     // The most significant bit of the byte *following* each course is set if the
     // cannon is open.
-    u8 courseStars[COURSE_COUNT];
+    startype courseStars[COURSE_COUNT];
 
     u8 courseCoinScores[COURSE_STAGES_COUNT];
 

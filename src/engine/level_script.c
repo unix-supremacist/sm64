@@ -436,7 +436,7 @@ static void level_cmd_place_object(void) {
     u16 model;
     struct SpawnInfo *spawnInfo;
 
-    if (sCurrAreaIndex != -1 && ((CMD_GET(u8, 2) & val7) || CMD_GET(u8, 2) == 0x1F)) {
+    if (sCurrAreaIndex != -1 && ((CMD_GET(u32, 24) & val7) || CMD_GET(u32, 24) == 0x1F)) {
         model = CMD_GET(u8, 3);
         spawnInfo = alloc_only_pool_alloc(sLevelPool, sizeof(struct SpawnInfo));
 
