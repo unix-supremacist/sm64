@@ -447,6 +447,10 @@ void update_walking_speed(struct MarioState *m) {
         targetSpeed *= 6.25 / m->quicksandDepth;
     }
 
+	if (m->forwardVel <= 8.0f) {
+        m->forwardVel = MIN(m->intendedMag, 8.0f);
+	}
+
     if (m->forwardVel <= 0.0f) {
         m->forwardVel += 1.1f;
     } else if (m->forwardVel <= targetSpeed) {
@@ -1845,16 +1849,11 @@ s32 act_hold_freefall_land(struct MarioState *m) {
 }
 
 s32 act_long_jump_land(struct MarioState *m) {
-#ifdef VERSION_SH
-    // BLJ (Backwards Long Jump) speed build up fix, crushing SimpleFlips's dreams since July 1997
-    if (m->forwardVel < 0.0f) {
-        m->forwardVel = 0.0f;
-    }
-#endif
-
-    if (!(m->input & INPUT_Z_DOWN)) {
-        m->input &= ~INPUT_A_PRESSED;
-    }
+	if (m->input & INPUT_Z_DOWN){
+		sLongJumpLandAction.aPressedAction = ACT_LONG_JUMP;
+	} else {
+		sLongJumpLandAction.aPressedAction = ACT_JUMP;
+	}
 
     if (common_landing_cancels(m, &sLongJumpLandAction, set_jumping_action)) {
         return TRUE;
