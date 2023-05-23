@@ -9,12 +9,35 @@
 #define ACT_6 (1 << 5)
 #define ACT_7 (1 << 6)
 #define ACT_8 (1 << 7)
+#define ACT_9 (1 << 8)
+#define ACT_10 (1 << 9)
+#define ACT_11 (1 << 10)
+#define ACT_12 (1 << 11)
+#define ACT_13 (1 << 12)
+#define ACT_14 (1 << 13)
+#define ACT_15 (1 << 14)
+#define ACT_16 (1 << 15)
+#define ACT_17 (1 << 16)
+#define ACT_18 (1 << 17)
+#define ACT_19 (1 << 18)
+#define ACT_20 (1 << 19)
+#define ACT_21 (1 << 20)
+#define ACT_22 (1 << 21)
+#define ACT_23 (1 << 22)
+#define ACT_24 (1 << 23)
+#define ACT_25 (1 << 24)
+#define ACT_26 (1 << 25)
+#define ACT_27 (1 << 26)
+#define ACT_28 (1 << 27)
+#define ACT_29 (1 << 28)
+#define ACT_30 (1 << 29)
 
 // If an object is set as active for the first 5 acts only, it is treated as always active.
 // It's possible that there were only planned to be 5 acts per level early in development.
 // Hence, they added a macro so they wouldn't have to change the acts for every object.
 #define ALL_ACTS_MACRO ACT_1 | ACT_2 | ACT_3 | ACT_4 | ACT_5
-#define ALL_ACTS       ACT_1 | ACT_2 | ACT_3 | ACT_4 | ACT_5 | ACT_6
+#define ALL_ACTS       ACT_1 | ACT_2 | ACT_3 | ACT_4 | ACT_5 | ACT_6 | ACT_7 | ACT_8 | ACT_9 | ACT_10 | ACT_11 | ACT_12 | ACT_13 | ACT_14 | ACT_15\
+| ACT_16 | ACT_17 | ACT_18 | ACT_19 | ACT_20 | ACT_21 | ACT_22 | ACT_23 | ACT_24 | ACT_25 | ACT_26 | ACT_27 | ACT_28 | ACT_29 | ACT_30
 
 #define COIN_FORMATION_FLAG_VERTICAL  (1 << 0)
 #define COIN_FORMATION_FLAG_RING      (1 << 1)
