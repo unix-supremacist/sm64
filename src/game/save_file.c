@@ -489,11 +489,11 @@ u32 save_file_get_flags(void) {
 u32 save_file_get_star_flags(s32 fileIndex, s32 courseIndex) {
     u32 starFlags;
 
-    if (courseIndex == COURSE_NUM_TO_INDEX(COURSE_NONE)) {
-        starFlags = SAVE_FLAG_TO_STAR_FLAG(gSaveBuffer.files[fileIndex][0].flags);
-    } else {
-        starFlags = gSaveBuffer.files[fileIndex][0].courseStars[courseIndex] & STAR_MASK;
-    }
+    //if (courseIndex == COURSE_NUM_TO_INDEX(COURSE_NONE)) {
+    //    starFlags = SAVE_FLAG_TO_STAR_FLAG(gSaveBuffer.files[fileIndex][0].flags);
+    //} else {
+        starFlags = gSaveBuffer.files[fileIndex][0].courseStars[courseIndex+1] & STAR_MASK;
+    //}
 
     return starFlags;
 }
@@ -503,11 +503,11 @@ u32 save_file_get_star_flags(s32 fileIndex, s32 courseIndex) {
  * If course is COURSE_NONE, add to the bitset of obtained castle secret stars.
  */
 void save_file_set_star_flags(s32 fileIndex, s32 courseIndex, u32 starFlags) {
-    if (courseIndex == COURSE_NUM_TO_INDEX(COURSE_NONE)) {
-        gSaveBuffer.files[fileIndex][0].flags |= STAR_FLAG_TO_SAVE_FLAG(starFlags);
-    } else {
-        gSaveBuffer.files[fileIndex][0].courseStars[courseIndex] |= starFlags;
-    }
+    //if (courseIndex == COURSE_NUM_TO_INDEX(COURSE_NONE)) {
+    //    gSaveBuffer.files[fileIndex][0].flags |= STAR_FLAG_TO_SAVE_FLAG(starFlags);
+    //} else {
+        gSaveBuffer.files[fileIndex][0].courseStars[courseIndex+1] |= starFlags;
+    //}
 
     gSaveBuffer.files[fileIndex][0].flags |= SAVE_FLAG_FILE_EXISTS;
     gSaveFileModified = TRUE;

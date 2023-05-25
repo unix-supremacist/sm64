@@ -30,7 +30,7 @@ struct SaveFile {
     // Star flags for each course.
     // The most significant bit of the byte *following* each course is set if the
     // cannon is open.
-    startype courseStars[COURSE_COUNT];
+    startype courseStars[COURSE_COUNT+1];
 
     u8 courseCoinScores[COURSE_STAGES_COUNT];
 
