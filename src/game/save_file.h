@@ -10,7 +10,7 @@
 #include "course_table.h"
 
 #define EEPROM_SIZE 0x200
-#define NUM_SAVE_FILES 1
+#define NUM_SAVE_FILES 2
 
 struct SaveBlockSignature {
     u16 magic;
