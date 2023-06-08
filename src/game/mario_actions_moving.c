@@ -452,9 +452,9 @@ void update_walking_speed(struct MarioState *m) {
 	}
 
     if (m->forwardVel <= 0.0f) {
-        m->forwardVel += 2.2f; //make movement more like
+        m->forwardVel += 1.5f; //make movement more like
     } else if (m->forwardVel <= targetSpeed) {
-        m->forwardVel += 2.2f - m->forwardVel / 43.0f;
+        m->forwardVel += 1.7f - m->forwardVel / 43.0f;
     } else if (m->floor->normal.y >= 0.95f) {
         m->forwardVel -= 1.0f;
     }
